@@ -1,7 +1,7 @@
 # No nitro upsell
 
 Removes ALL of Discord's nitro upsells by tricking the client into thinking you have nitro. Works
-with Replugged and Powercord.
+with Replugged.
 
 ## Notes
 
