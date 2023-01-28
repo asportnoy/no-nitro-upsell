@@ -14,7 +14,7 @@ export async function start(): Promise<void> {
   addChangeListener(() => {
     const newUser = getCurrentUser();
     if (newUser) {
-      if (newUser.id !== lastUserId || newUser.premiumType === initialValue) {
+      if (newUser.id !== lastUserId || newUser.premiumType == null) {
         user = newUser;
         updatePremiumType();
       }
