@@ -11,21 +11,18 @@ export async function start(): Promise<void> {
     getCurrentUser: () => User | undefined;
   }>(webpack.filters.byProps("getCurrentUser", "getUser"));
 
-  user = getCurrentUser();
-  if (user) ready();
-
   addChangeListener(() => {
     const newUser = getCurrentUser();
     if (newUser) {
       if (newUser.id !== lastUserId || newUser.premiumType === initialValue) {
         user = newUser;
-        ready();
+        updatePremiumType();
       }
     }
   });
 }
 
-function ready(): void {
+function updatePremiumType(): void {
   if (!user) return;
 
   initialValue = user.premiumType;
