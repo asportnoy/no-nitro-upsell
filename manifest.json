@@ -9,8 +9,8 @@
   },
   "version": "1.0.3",
   "updater": {
-    "type": "github",
-    "id": "asportnoy/no-nitro-upsell"
+    "type": "store",
+    "id": "dev.albertp.NoNitroUpsell"
   },
   "license": "MIT",
   "type": "replugged-plugin",
