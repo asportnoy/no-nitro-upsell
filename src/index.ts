@@ -40,6 +40,7 @@ export function start(): void {
 
 function ready(user: ModifiedUser): void {
   if (!user) return;
+  if ("_realPremiumType" in user) return;
 
   user._realPremiumType = user.premiumType ?? 0;
   user.premiumType = 2;
@@ -53,8 +54,7 @@ export function stop(): void {
   const { getCurrentUser } = userStore;
   const user = getCurrentUser();
   if (!user) return;
-  if (typeof user._realPremiumType === "number") {
-    user.premiumType = user._realPremiumType;
-    delete user._realPremiumType;
-  }
+  if (!("_realPremiumType" in user)) return;
+  user.premiumType = user._realPremiumType;
+  delete user._realPremiumType;
 }
