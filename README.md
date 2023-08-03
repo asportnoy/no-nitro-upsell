@@ -11,4 +11,11 @@ Removes ALL of Discord's nitro upsells by tricking the client into thinking you 
 ### For plugin developers
 
 This plugin adds a `user._realPremiumType` property on the current user object, which you can use in
-your plugins if you need to check if a user actually has nitro (ie for a backend gated feature).
+your plugins if you need to check if a user actually has nitro (ie for a backend gated feature). To
+make sure that it will work with or without this plugin, you should use the following code:
+
+```ts
+const actualPremiumType: number = user._realPremiumType ?? user.premiumType ?? 0;
+```
+
+(Note that you may have to update the type of `user` or ignore the type error)
