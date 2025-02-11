@@ -1,6 +1,6 @@
-import { User } from "discord-types/general";
+import type { User } from "discord-types/general";
 import { webpack } from "replugged";
-import { Store } from "replugged/dist/renderer/modules/common/flux";
+import type { Store } from "replugged/dist/renderer/modules/common/flux";
 
 let user: ModifiedUser | undefined;
 let lastUserId: string | undefined;
@@ -38,7 +38,7 @@ export function start(): void {
   uninject = () => removeChangeListener(onChange);
 }
 
-function ready(user: ModifiedUser): void {
+function ready(user: ModifiedUser | undefined): void {
   if (!user) return;
   if ("_realPremiumType" in user) return;
 

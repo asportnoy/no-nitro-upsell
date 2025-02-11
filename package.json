@@ -1,9 +1,10 @@
 {
   "name": "plugin-template",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "A plugin template",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0",
+    "pnpm": ">=10.0.0"
   },
   "scripts": {
     "build": "replugged build plugin",
@@ -15,23 +16,23 @@
     "prettier:fix": "prettier ./src --write",
     "eslint:fix": "eslint ./src --fix",
     "lint": "pnpm run prettier:check && pnpm run eslint:check && pnpm run check",
-    "lint:fix": "pnpm run prettier:fix && pnpm run eslint:fix"
+    "lint:fix": "pnpm run prettier:fix && pnpm run eslint:fix",
+    "release": "replugged release"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "@fal-works/esbuild-plugin-global-externals": "^2.1.2",
-    "@types/node": "^18.17.1",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "discord-types": "^1.3.26",
-    "eslint": "^8.46.0",
+    "@types/node": "^22.13.1",
+    "@types/react": "^18.3.18",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "discord-types": "^1.3.3",
+    "eslint": "^8.57.1",
     "eslint-config-dmitmel": "github:dmitmel/eslint-config-dmitmel",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-react": "^7.33.1",
-    "prettier": "^2.8.8",
-    "replugged": "^4.5.1",
-    "typescript": "^5.1.6"
+    "prettier": "^3.5.0",
+    "replugged": "^4.8.4",
+    "typescript": "~5.4.5"
   }
 }
